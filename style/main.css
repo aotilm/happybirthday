@@ -147,6 +147,8 @@ body {
   visibility: hidden;
   width: 25px;
   z-index: -1;
+  transform-origin: center;
+  will-change: transform, opacity;
 }
 
 .eight svg:nth-child(1) {
