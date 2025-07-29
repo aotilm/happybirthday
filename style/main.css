@@ -112,7 +112,7 @@ body {
   left: 41.5%;
   position: absolute;
   /* transform: scale(0.1); */
-  top: -35%;
+  top: -270px;
   width: 80px;
 }
 
@@ -225,6 +225,25 @@ body {
   z-index: 3;
 }
 
+.profile-container {
+  position: relative; /* щоб шапка була відносно цього контейнера */
+  display: inline-block;
+}
+
+.profile-picture {
+  height: 350px; /* можна підлаштувати */
+  max-width: 100%;
+}
+
+.hat {
+  position: absolute;
+  width: 80px;
+  top: -40px; /* налаштовуємо позицію по вертикалі */
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg); /* вирівнюємо по центру і нахиляємо */
+}
+
+
 /* Media Queries */
 @media screen and (max-height: 1000px) {
   .six .hat {
@@ -251,10 +270,7 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  /* .container {
-    width: 90%;
-  } */
-
+  /* Адаптація текстового блоку */
   .four .text-box {
     width: 90%;
   }
@@ -272,21 +288,53 @@ body {
     font-size: 5rem;
   }
 
+  /* Блок з фото та шапочкою */
+  .six {
+    top: 5vh; /* піднімаємо блок вище */
+  }
+
+  .six .profile-picture {
+    height: 380px; /* зменшуємо фото */
+  }
+
   .six .hat {
-    /* top: -20px; */
     width: 50px;
+    top: -220px; /* шапочка вище */
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg); /* центрування */
+  }
+
+  /* Текстове привітання */
+  .wish {
+    padding: 0 10px;
+    max-height: 40vh; /* обмеження висоти */
+    /* overflow-y: auto; прокрутка, якщо багато тексту */
   }
 
   .wish-hbd {
-    font-size: 2.2em;
+    font-size: 1.8em;
   }
 
   .wish h5 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
   }
 
+  /* Інші елементи */
   .nine p {
     font-size: 1.5rem;
     font-weight: lighter;
+  }
+}
+
+
+
+@media screen and (max-width: 400px) {
+  .six img.profile-picture {
+    height: 280px;
+  }
+
+  .wish h5 {
+    font-size: 1rem;
   }
 }
