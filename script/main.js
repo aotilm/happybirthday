@@ -1,13 +1,13 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     Swal.fire({
-        title: 'Do you want to play music in the background?',
-        icon: 'warning',
+        title: 'Увімкнути трішки музики?',
+        icon: 'info',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes',
-        cancelButtonText: 'No',
+        confirmButtonText: 'Звісно!',
+        cancelButtonText: 'Ні',
     }).then((result) => {
         if (result.isConfirmed) {
             document.querySelector('.song').play();
@@ -29,9 +29,11 @@ const animationTimeline = () => {
         .split("")
         .join("</span><span>")}</span>`;
 
-    hbd.innerHTML = `<span>${hbd.innerHTML
+    hbd.innerHTML = hbd.innerHTML
         .split("")
-        .join("</span><span>")}</span>`;
+        .map(char => char === " " ? "<span>&nbsp;</span>" : `<span>${char}</span>`)
+        .join("");
+
 
     const ideaTextTrans = {
         opacity: 0,
@@ -103,8 +105,7 @@ const animationTimeline = () => {
     )
     .to(".fake-btn", 0.1, {
         backgroundColor: "rgb(127, 206, 248)",
-    },
-    "+=4")
+    })
     .to(
         ".four",
         0.5, {
