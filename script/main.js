@@ -11,12 +11,17 @@ window.addEventListener('load', () => {
     }).then((result) => {
         if (result.isConfirmed) {
             document.querySelector('.song').play();
-            animationTimeline();
-        } else {
-            animationTimeline();
         }
+        
+        // Запит на fullscreen
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        }
+        
+        animationTimeline();
     });
 });
+
 
 
 // animation timeline
